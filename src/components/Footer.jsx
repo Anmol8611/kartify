@@ -1,13 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   AiFillLinkedin,
   AiFillTwitterCircle,
   AiOutlineGithub,
 } from "react-icons/ai";
 import { FaOpencart } from "react-icons/fa";
+import Button from "./Button";
 
 const Footer = () => {
+
+  const navigate = useNavigate()
+
   return (
     <footer className='bg-slate-900 pb-10 pt-28 px-16 flex flex-col items-center gap-5'>
       <div className='flex items-center justify-between w-full'>
@@ -75,7 +79,9 @@ const Footer = () => {
               </span>
             </NavLink>
           </div>
-          <button className="text-slate-200">Shop More butto</button>
+          <div onClick={()=>navigate("/products")}>
+          <Button text="Shop More"/>
+          </div>
         </div>
       </div>
       <div className='text-slate-200 mt-10'>
