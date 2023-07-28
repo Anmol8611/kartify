@@ -15,7 +15,7 @@ const Hero = (props) => {
         <h5 className='text-lg font-light text-slate-300 text pb-5'> " Kartify the Cart " </h5>
         <hr />
         <div onClick={()=>navigate("/products")}>
-        <Button text={"Shop More"} />
+        <Button text={"Go to Shop"} />
         </div>
       </div>
     </section>

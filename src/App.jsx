@@ -15,7 +15,7 @@ const App = () => {
     <div
       style={{
         backgroundImage:
-          'url("https://images.unsplash.com/photo-1521106581851-da5b6457f674?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGxpZ2h0JTIwaW4lMjBkYXJrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60")',
+          'url("https://images.unsplash.com/photo-1473187983305-f615310e7daa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60")',
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
@@ -23,8 +23,8 @@ const App = () => {
     >
       <div
         style={{
-          background: "#0d131db9",
-          backdropFilter: "blur(20px)"
+          background: "#0041879c",
+          backdropFilter: "blur(8px)"
         }}
         className='h-full w-full'
       >

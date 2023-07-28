@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   AiFillLinkedin,
   AiFillTwitterCircle,
@@ -13,7 +13,7 @@ const Footer = () => {
   const navigate = useNavigate()
 
   return (
-    <footer className='bg-slate-900 pb-10 pt-28 px-16 flex flex-col items-center gap-5'>
+    <footer className='bg-slate-900 pb-10 pt-28 px-16 flex flex-col items-center gap-5 bg-opacity-60 backdrop-filter backdrop-blur-md'>
       <div className='flex items-center justify-between w-full'>
         <NavLink to='/' className='h-32 w-32'>
           <img
@@ -59,15 +59,15 @@ const Footer = () => {
         <div className="list-none flex flex-col items-center gap-5">
           <li className="text-slate-200 font-bold text-lg">Social Media</li>
           <div className="flex items-center gap-10 text-5xl text-slate-200">
-          <li>
+          <Link to={"https://twitter.com/Anmol_kr_twt"} target="_blank">
             <AiFillTwitterCircle className="hover:text-sky-500 active:text-yellow-300 transition-all hover:shadow hover:shadow-slate-100 hover:rounded-full p-2" />
-          </li>
-          <li>
+          </Link>
+          <Link to={"https://github.com/Anmol8611/kartify"} target="_blank">
             <AiOutlineGithub className="hover:text-sky-500 active:text-yellow-300 transition-all hover:shadow hover:shadow-slate-100 hover:rounded-full p-2" />
-          </li>
-          <li>
+          </Link>
+          <Link to={"https://www.linkedin.com/in/anmol-kumar-a7593125b/"} target="_blank">
             <AiFillLinkedin className="hover:text-sky-500 active:text-yellow-300 transition-all hover:shadow hover:shadow-slate-100 hover:rounded-full p-2" />
-          </li>
+          </Link>
           </div>
         </div>
         <div className='flex flex-col items-center'>
