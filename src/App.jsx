@@ -23,8 +23,8 @@ const App = () => {
     >
       <div
         style={{
-          background: "#0041879c",
-          backdropFilter: "blur(8px)"
+          background: "#0c1c2c9c",
+          backdropFilter: "blur(24px)"
         }}
         className='h-full w-full'
       >
@@ -35,7 +35,7 @@ const App = () => {
             <Route path='/products' element={<Products />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/singleproduct' element={<SingleProduct />} />
+            <Route path='/singleproduct/:id' element={<SingleProduct />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='*' element={<ErrorPage />} />
           </Routes>
