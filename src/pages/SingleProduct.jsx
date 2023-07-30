@@ -6,6 +6,7 @@ import MyImage from "../components/MyImage";
 import FormatPrice from "../helpers/FormatPrice";
 import { TbReplace, TbTruckDelivery } from 'react-icons/tb'
 import { MdSecurity } from 'react-icons/md'
+import StarsComponent from "../components/StarsComponent";
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -50,8 +51,7 @@ const SingleProduct = () => {
         <MyImage imgs={image} />
         <div className='flex flex-col justify-start gap-5 max-w-[50%]'>
           <h2 className="text-lg font-bold">{name}</h2>
-          <p>{stars}</p>
-          <p>{reviews}</p>
+          <StarsComponent stars={stars} reviews={reviews} />
           <div>
             MRP :{" "}
             <del className='font-bold text-lg text-green-700'>
