@@ -67,19 +67,19 @@ const SingleProduct = () => {
           </div>
           <p className="max-w-2xl text-sm">{description}</p>
           <div className="flex items-center justify-between">
-            <div className="flex flex-col items-center text-slate-400 border-none hover:scale-105 transition-all bg-slate-700 backdrop-filter backdrop-blur-md bg-opacity-60 rounded-md hover:text-sky-500 hover:bg-slate-500 cursor-pointer p-2 gap-2">
+            <div className="flex flex-col items-center text-slate-400 border-none bg-black backdrop-filter backdrop-blur-md bg-opacity-60 rounded-md p-2 gap-2">
               <TbTruckDelivery className="text-3xl"/>
               <p>Free Delivery</p>
             </div>
-            <div className="flex flex-col items-center text-slate-400 border-none hover:scale-105 transition-all bg-slate-700 backdrop-filter backdrop-blur-md bg-opacity-60 rounded-md hover:text-sky-500 hover:bg-slate-500 cursor-pointer p-2 gap-2">
+            <div className="flex flex-col items-center text-slate-400 border-none bg-black backdrop-filter backdrop-blur-md bg-opacity-60 rounded-md p-2 gap-2">
               <TbReplace className="text-3xl"/>
               <p>10 Days Replacement</p>
             </div>
-            <div className="flex flex-col items-center text-slate-400 border-none hover:scale-105 transition-all bg-slate-700 backdrop-filter backdrop-blur-md bg-opacity-60 rounded-md hover:text-sky-500 hover:bg-slate-500 cursor-pointer p-2 gap-2">
+            <div className="flex flex-col items-center text-slate-400 border-none bg-black backdrop-filter backdrop-blur-md bg-opacity-60 rounded-md p-2 gap-2">
               <TbTruckDelivery className="text-3xl"/>
               <p>Thapa Delivered</p>
             </div>
-            <div className="flex flex-col items-center text-slate-400 border-none hover:scale-105 transition-all bg-slate-700 backdrop-filter backdrop-blur-md bg-opacity-60 rounded-md hover:text-sky-500 hover:bg-slate-500 cursor-pointer p-2 gap-2">
+            <div className="flex flex-col items-center text-slate-400 border-none bg-black backdrop-filter backdrop-blur-md bg-opacity-60 rounded-md p-2 gap-2">
               <MdSecurity className="text-3xl" />
               <p>2 Year Warranty</p>
             </div>

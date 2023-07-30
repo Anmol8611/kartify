@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 const MyImage = ({ imgs }) => {
-  const [mainImage, setMainImage] = useState(imgs[0]);
+  const [mainImage, setMainImage] = useState(imgs && imgs[0]);
 
   return (
     <div className='flex items-center gap-20 max-w-fit'>
       <div className='flex flex-col gap-5 items-center'>
-        {imgs.map((elm) => (
+        {imgs?.map((elm) => (
           <img 
           onClick={()=>setMainImage(elm)}
           key={elm?.id} 
