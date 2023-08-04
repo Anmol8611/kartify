@@ -6,7 +6,7 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className='flex sticky z-10 top-0 left-0 w-full justify-between items-center px-20 py-3 bg-slate-900 bg-opacity-60 backdrop-filter backdrop-blur-md shadow shadow-black'>
+    <nav className='flex sticky z-10 top-0 left-0 w-full justify-between items-center px-20 py-3 bg-slate-900 bg-opacity-80 backdrop-filter backdrop-blur-md shadow shadow-black'>
       <div onClick={() => navigate("/")}>
         <img
           src='/logos/logo6.svg'

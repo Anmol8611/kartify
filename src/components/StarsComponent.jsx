@@ -2,7 +2,6 @@ import React from 'react'
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs'
 
 const StarsComponent = ({stars, reviews}) => {
-    console.log(stars, reviews);
    const ratingStar = Array.from({length : 5},(_,index )=>{
         let number = index + 0.5;
         return (

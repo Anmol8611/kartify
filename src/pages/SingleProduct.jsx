@@ -7,6 +7,7 @@ import FormatPrice from "../helpers/FormatPrice";
 import { TbReplace, TbTruckDelivery } from 'react-icons/tb'
 import { MdSecurity } from 'react-icons/md'
 import StarsComponent from "../components/StarsComponent";
+import AddToCart from "../components/AddToCart";
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -16,7 +17,6 @@ const SingleProduct = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${URL}?id=${id}`);
-    console.log(singleProduct);
   }, []);
 
   const {
@@ -49,7 +49,7 @@ const SingleProduct = () => {
       <PageNavigation title={name} />
       <div className='flex items-center justify-around  mx-auto min-h-full text-slate-100 mt-12 backdrop-filter backdrop-blur-2xl bg-opacity-70 bg-slate-950 rounded-lg py-10'>
         <MyImage imgs={image} />
-        <div className='flex flex-col justify-start gap-5 max-w-[50%]'>
+        <div className='flex flex-col justify-start gap-3 max-w-[50%]'>
           <h2 className="text-lg font-bold">{name}</h2>
           <StarsComponent stars={stars} reviews={reviews} />
           <div>
@@ -90,6 +90,8 @@ const SingleProduct = () => {
             <p>Brand : {company}</p>
             <p>Caregory : {category}</p>
           </div>
+          <hr className="w-full" />
+          {stock > 0 && <AddToCart product={singleProduct} />}
 
         </div>
       </div>

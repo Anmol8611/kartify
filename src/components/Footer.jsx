@@ -13,7 +13,7 @@ const Footer = () => {
   const navigate = useNavigate()
 
   return (
-    <footer className='bg-slate-900 pb-10 pt-28 px-16 flex flex-col items-center gap-5 bg-opacity-60 backdrop-filter backdrop-blur-md'>
+    <footer className='bg-slate-900 pb-10 pt-28 px-16 flex flex-col items-center gap-5 bg-opacity-80 backdrop-filter backdrop-blur-sm'>
       <div className='flex items-center justify-between w-full'>
         <NavLink to='/' className='h-32 w-32'>
           <img

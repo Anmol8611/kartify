@@ -11,8 +11,9 @@ const MyImage = ({ imgs }) => {
           onClick={()=>setMainImage(elm)}
           key={elm?.id} 
           src={`${elm?.url}`} 
-          className='h-24 w-32 object-cover rounded-lg cursor-pointer hover:scale-[1.02] hover:opacity-70 active:opacity-100 opacity-50 active:scale-105 transition-all' 
+          className={elm?.url === mainImage?.url ? 'h-24 w-32 object-cover rounded-lg cursor-pointer hover:scale-[1.02] opacity-100 active:scale-105 transition-all' : 'h-24 w-32 object-cover rounded-lg cursor-pointer hover:scale-[1.02] opacity-50 active:scale-105 transition-all'} 
           alt={elm?.filename} />
+          
         ))}
       </div>
       <div>
