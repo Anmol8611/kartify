@@ -1,10 +1,24 @@
 const filterReducer = (state, action) => {
   switch (action.type) {
     case "LOAD_FILTER_PRODUCTS":
+      let priceArr = action.payload.map((currElm) => currElm.price);
+
+      // 1st way
+      // console.log(Math.max.apply(null, priceArr));
+
+      // 2nd way
+      // let maxPrice = priceArr.reduce((initialVal, curVal)=>Math.max(initialVal, curVal),0)
+      // console.log(maxPrice);
+
+      // 3rd way
+      let maxPrice = Math.max(...priceArr);
+      console.log(maxPrice);
+
       return {
         ...state,
         filter_products: [...action.payload],
         all_products: [...action.payload],
+        filters: { ...state.filters, maxPrice , price: maxPrice },
       };
 
     case "SET_GRIDVIEW":
@@ -57,46 +71,74 @@ const filterReducer = (state, action) => {
         filter_products: newSortData,
       };
 
-    case "UPDATE_FILTER_VALUE": 
-    const {name, value} = action.payload;
+    case "UPDATE_FILTER_VALUE":
+      const { name, value } = action.payload;
       return {
         ...state,
-        filters : {
+        filters: {
           ...state.filters,
-          [name] : value
-        }
+          [name]: value,
+        },
+      };
+
+    case "FILTER_PRODUCTS":
+      let { all_products } = state;
+      let tempFilterProducts = [...all_products];
+      const { text, category, company, color, price } = state.filters;
+
+      if (text) {
+        tempFilterProducts = tempFilterProducts.filter((currElm) => {
+          return currElm.name.toLowerCase().includes(text);
+        });
       }
 
-    case "FILTER_PRODUCTS" :
-      let {all_products} = state;
-      let tempFilterProducts = [...all_products]
-      const {text, category, company} = state.filters
-
-      if(text) {
-        tempFilterProducts = tempFilterProducts.filter((currElm)=>{
-          return currElm.name.toLowerCase().includes(text)
-        })
+      if (category !== "all") {
+        tempFilterProducts = tempFilterProducts.filter(
+          (currElm) => currElm.category.toLowerCase() === category.toLowerCase()
+        );
       }
 
-      if(category !== "all") {
-        tempFilterProducts = tempFilterProducts.filter((currElm)=>(
-          currElm.category.toLowerCase() === category.toLowerCase()
+      if (company !== "all") {
+        tempFilterProducts = tempFilterProducts.filter(
+          (currElm) => currElm.company.toLowerCase() === company.toLowerCase()
+        );
+      }
+
+      if (color !== "all") {
+        tempFilterProducts = tempFilterProducts.filter((currElm) =>
+          currElm.colors.includes(color)
+        );
+      }
+
+      if (price === 0) {
+        tempFilterProducts = tempFilterProducts.filter((currElm)=> (
+          currElm.price == price
         ))
-      }
-
-      if(company !== "all") {
-        tempFilterProducts = tempFilterProducts.filter((currElm)=>(
-          currElm.company.toLowerCase() === company.toLowerCase()
+      } else {
+        tempFilterProducts = tempFilterProducts.filter((currElm)=> (
+          currElm.price <= price
         ))
       }
 
       return {
         ...state,
-        filter_products : tempFilterProducts
-      }
+        filter_products: tempFilterProducts,
+      };
 
-
-
+      case "CLEAR_FILTERS" :
+        return {
+          ...state,
+          filters : {
+            ...state.filters,
+            text: "",
+            category: "all",
+            company: "all",
+            color: "all",
+            maxPrice: 0,
+            price: state.filters.maxPrice,
+            minPrice: state.filters.minPrice,
+          }
+        }
 
     default:
       return state;
