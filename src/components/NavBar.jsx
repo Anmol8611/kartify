@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaOpencart } from "react-icons/fa";
+import CartIcon from "./CartIcon";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -49,15 +49,9 @@ const NavBar = () => {
             </NavLink>
           </li>
         </div>
-
-        <li className='font-sans block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700'>
-          <NavLink to='/cart' role='button' className='relative flex'>
-            <FaOpencart className='font-bold text-3xl text-slate-200 hover:text-blue-500 transition-all active:text-sky-200' />
-            <span className='absolute right-0 top-0 rounded-full bg-yellow-400 w-4 h-4 top right p-0 m-0 text-red-700 font-mono text-xs  leading-tight text-center'>
-              5
-            </span>
-          </NavLink>
-        </li>
+        <div className='hover:shadow hover:shadow-white py-3 pr-2 rounded-full transition-all'>
+          <CartIcon />
+        </div>
       </div>
     </nav>
   );

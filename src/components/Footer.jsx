@@ -7,6 +7,7 @@ import {
 } from "react-icons/ai";
 import { FaOpencart } from "react-icons/fa";
 import Button from "./Button";
+import CartIcon from "./CartIcon";
 
 const Footer = () => {
 
@@ -71,13 +72,16 @@ const Footer = () => {
           </div>
         </div>
         <div className='flex flex-col items-center'>
-          <div className='font-sans block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700'>
+          {/* <div className='font-sans block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700'>
             <NavLink to='/cart' role='button' className='relative flex'>
               <FaOpencart className='font-bold text-6xl text-slate-200 hover:text-blue-500 transition-all hover:shadow hover:shadow-slate-100 hover:rounded-full p-2 active:text-yellow-300' />
               <span className='absolute right-0 top-0 rounded-full bg-yellow-400 w-5 h-5 top right p-0 m-0 text-red-700 font-mono text-sm  leading-tight text-center'>
                 5
               </span>
             </NavLink>
+          </div> */}
+          <div className="hover:shadow hover:shadow-white py-5 pr-4 rounded-full transition-all">
+          <CartIcon/>
           </div>
           <div onClick={()=>navigate("/products")}>
           <Button text="Shop More"/>

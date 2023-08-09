@@ -1,17 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { AppProvider } from './context/productContext.jsx'
-import { FilterContextProvider } from './context/filterContext.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { AppProvider } from "./context/productContext.jsx";
+import { FilterContextProvider } from "./context/filterContext.jsx";
+import { CartProvider } from "./context/cartContext.jsx";
 // import './api/mirageMock.js'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AppProvider>
       <FilterContextProvider>
-      <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </FilterContextProvider>
     </AppProvider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
